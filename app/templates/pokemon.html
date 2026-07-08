@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokémon | PokeAPI Hub</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <aside>
+        <h2>PokeAPI Hub</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/pokemons">Pokémon</a></li>
+            <li><a href="/moves">Moves</a></li>
+            <li><a href="/berries">Berries</a></li>
+            <li><a href="/games">Games</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <h1>Pesquisar Pokémon</h1>
+        <div class="search-box">
+            <input
+                id="pokemon-input"
+                type="text"
+                placeholder="Digite o nome do Pokémon">
+            <button onclick="buscarPokemon()">
+                Buscar
+            </button>
+        </div>
+        <section id="pokemon-result">
+
+        </section>
+    </main>
+</body>
+<script src="/static/js/listagemPokemon.js"></script>
+</html>
