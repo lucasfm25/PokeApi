@@ -9,14 +9,105 @@
 
 <body>
     <aside>
+
         <h2>PokeAPI Hub</h2>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/pokemons">Pokémon</a></li>
-            <li><a href="/moves">Moves</a></li>
-            <li><a href="/berries">Berries</a></li>
-            <li><a href="/games">Games</a></li>
+
+        <ul class="menu">
+
+            <li>
+                <a href="/">Home</a>
+            </li>
+
+            <li class="submenu">
+
+                <div class="submenu-title">
+
+                    <span>Pokémon</span>
+
+                    <span class="arrow"></span>
+
+                </div>
+
+                <ul class="submenu-items">
+
+                    <li>
+                        <a href="/pokemons">Pesquisar Pokémon</a>
+                    </li>
+
+                    <li>
+                        <a href="/shiny">Listar Shiny por Região</a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+            <li class="submenu">
+
+                <div class="submenu-title">
+
+                    <span>Moves</span>
+
+                    <span class="arrow"></span>
+
+                </div>
+
+                <ul class="submenu-items">
+
+                    <li>
+                        <a href="#">Pesquisar Move</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Pesquisar por Tipo</a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+            <li class="submenu">
+
+                <div class="submenu-title">
+
+                    <span>Berries</span>
+
+                    <span class="arrow"></span>
+
+                </div>
+
+                <ul class="submenu-items">
+
+                    <li>
+                        <a href="#">Pesquisar Berry</a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+            <li class="submenu">
+
+                <div class="submenu-title">
+
+                    <span>Games</span>
+
+                    <span class="arrow"></span>
+
+                </div>
+
+                <ul class="submenu-items">
+
+                    <li>
+                        <a href="#">Pesquisar Game</a>
+                    </li>
+
+                </ul>
+
+            </li>
+
         </ul>
+
     </aside>
     <main>
         <section id="pokemon-list">
@@ -24,6 +115,7 @@
         </section>
     </main>
 </body>
+<script src="/static/js/sidebar.js"></script>
 <script src="/static/js/pokemon.js"></script>
 <script src="/static/js/app.js"></script>
 </html>

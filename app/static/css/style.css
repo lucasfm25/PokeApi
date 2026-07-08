@@ -24,20 +24,123 @@ aside{
     background:#111827;
 
     padding:30px;
+
 }
 
 aside h2{
 
     margin-bottom:40px;
+
 }
 
-aside li{
+.menu{
 
     list-style:none;
 
-    margin-bottom:20px;
+}
+
+.menu li{
+
+    margin-bottom:12px;
+
+}
+
+.menu a{
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.2s;
+
+}
+
+.menu a:hover{
+
+    color:#3B82F6;
+
+}
+
+.submenu-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
 
     cursor:pointer;
+
+    padding:8px 0;
+
+    user-select:none;
+
+}
+
+.submenu-title:hover{
+
+    color:#3B82F6;
+
+}
+
+.arrow{
+
+    width:8px;
+
+    height:8px;
+
+    border-right:2px solid #9CA3AF;
+
+    border-bottom:2px solid #9CA3AF;
+
+    transform:rotate(-45deg);
+
+    transition:.2s;
+
+}
+
+.arrow.open{
+
+    transform:rotate(45deg);
+
+}
+
+.submenu-items{
+
+    list-style:none;
+
+    display:none;
+
+    margin-top:10px;
+
+    margin-left:18px;
+
+}
+
+.submenu-items.active{
+
+    display:block;
+
+}
+
+.submenu-items li{
+
+    margin:10px 0;
+
+}
+
+.submenu-items a{
+
+    color:#9CA3AF;
+
+    font-size:15px;
+
+}
+
+.submenu-items a:hover{
+
+    color:white;
+
 }
 
 main{
@@ -48,6 +151,16 @@ main{
 }
 
 #pokemon-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+#pokemon-result{
 
     display:flex;
 
@@ -138,6 +251,24 @@ main{
     background:#3B82F6;
 
     color:white;
+
+}
+
+.search-box select{
+
+    width:350px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#1F2937;
+
+    color:white;
+
+    font-size:15px;
 
 }
 
@@ -286,5 +417,49 @@ aside a:hover{
     border-radius:20px;
 
     transition:.4s;
+
+}
+
+.evolution-list{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:30px;
+
+    margin-top:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.evolution-item{
+
+    text-align:center;
+
+}
+
+.evolution-item img{
+
+    width:120px;
+
+    transition:.2s;
+
+}
+
+.evolution-item img:hover{
+
+    transform:scale(1.1);
+
+}
+
+.arrow{
+
+    font-size:40px;
+
+    color:#60A5FA;
 
 }

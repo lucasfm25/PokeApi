@@ -1,5 +1,7 @@
-async function buscarPokemon() {
-    const nome = document.getElementById("pokemon-input").value;
+async function buscarPokemon(nome) {
+    if (!nome) {
+        nome = document.getElementById("pokemon-input").value;
+    }
     if (!nome)
         return;
     const response = await fetch(`/pokemon/${nome}`);
@@ -46,7 +48,7 @@ function renderizarPokemon(pokemon){
                     <br>
 
                     <p><strong>Altura</strong></p>
-                    <p>${pokemon.altura}</p>s
+                    <p>${pokemon.altura}</p>
 
                     <br>
 
@@ -100,7 +102,24 @@ function renderizarPokemon(pokemon){
 
                 <h2>Linha Evolutiva</h2>
 
-                <p>Em desenvolvimento...</p>
+                <div class="evolution-list">
+
+                    ${pokemon.linha_evolucao.map(e => `
+
+                        <div class="evolution-item" onclick="buscarPokemon('${e.nome}')">
+
+                            <img
+                                src="${e.imagem}"
+                                alt="${e.nome}"
+                            >
+
+                            <p>${e.nome}</p>
+
+                        </div>
+
+                    `).join('<span> > </span>')}
+
+                </div>
 
             </div>
 

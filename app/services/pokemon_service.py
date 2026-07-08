@@ -39,6 +39,10 @@ class PokemonService:
         for stat in pokemon["stats"]:
             stats[stat["stat"]["name"]] = stat["base_stat"]
 
+        pokemon_species = await self.client.get(f"pokemon-species/{pokemon['id']}")
+
+        pokemon_evolution_chain = await self.busca_evolucao(pokemon_species["evolution_chain"]["url"].split("/")[-2])
+
         return {
             "id": pokemon["id"],
             "nome": pokemon["name"].capitalize(),
@@ -47,6 +51,30 @@ class PokemonService:
             "peso": f"{pokemon['weight'] / 10} kg",
             "tipos": tipos,
             "habilidades": habilidades,
-            "stats": stats
+            "stats": stats,
+            "linha_evolucao": pokemon_evolution_chain
         }
+    
+    async def busca_evolucao(self, evolution_chain_id: int):
+        evolucoes = await self.client.get(f"evolution-chain/{evolution_chain_id}")
+        evolucao_formatada = []
+
+        def formatar_evolucao(chain):
+
+            pokemon_id = int(chain["species"]["url"].rstrip("/").split("/")[-1])
+
+            evolucao_formatada.append({
+
+                "id": pokemon_id,
+
+                "nome": chain["species"]["name"].capitalize(),
+
+                "imagem": f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{pokemon_id}.png"
+            })
+
+            for proxima in chain["evolves_to"]:
+                formatar_evolucao(proxima)
+
+        formatar_evolucao(evolucoes["chain"])
+        return evolucao_formatada
         

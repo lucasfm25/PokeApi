@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokémon | PokeAPI Hub</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <aside>
+
+        <h2>PokeAPI Hub</h2>
+
+        <ul class="menu">
+
+            <li>
+                <a href="/">Home</a>
+            </li>
+
+            <li class="submenu">
+
+                <div class="submenu-title">
+
+                    <span>Pokémon</span>
+
+                    <span class="arrow"></span>
+
+                </div>
+
+                <ul class="submenu-items">
+
+                    <li>
+                        <a href="/pokemons">Pesquisar Pokémon</a>
+                    </li>
+
+                    <li>
+                        <a href="/shiny">Listar Shiny por Região</a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+            <li class="submenu">
+
+                <div class="submenu-title">
+
+                    <span>Moves</span>
+
+                    <span class="arrow"></span>
+
+                </div>
+
+                <ul class="submenu-items">
+
+                    <li>
+                        <a href="#">Pesquisar Move</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Pesquisar por Tipo</a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+            <li class="submenu">
+
+                <div class="submenu-title">
+
+                    <span>Berries</span>
+
+                    <span class="arrow"></span>
+
+                </div>
+
+                <ul class="submenu-items">
+
+                    <li>
+                        <a href="#">Pesquisar Berry</a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+            <li class="submenu">
+
+                <div class="submenu-title">
+
+                    <span>Games</span>
+
+                    <span class="arrow"></span>
+
+                </div>
+
+                <ul class="submenu-items">
+
+                    <li>
+                        <a href="#">Pesquisar Game</a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <main>
+        <h1>Shiny das regiões</h1>
+        <div class="search-box">
+
+            <select id="region-select">
+
+                <option value="">Selecione uma região</option>
+
+            </select>
+
+            <button onclick="buscarRegiao()">
+                Buscar Pokédex
+            </button>
+
+        </div>
+        <section id="pokemon-result">
+
+        </section>
+    </main>
+</body>
+<script src="/static/js/sidebar.js"></script>
+<script src="/static/js/shiny.js"></script>
+</html>
