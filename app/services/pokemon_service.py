@@ -5,7 +5,7 @@ class PokemonService:
         self.client = PokeApiClient()
 
     async def listar_pokemons(self):
-        pokedex = await self.client.get("pokemon?limit=151")
+        pokedex = await self.client.get("pokemon?limit=1085")
         pokemons = []
         for pokemon in pokedex["results"]:
             pokemon_id = pokemon["url"].split("/")[-2]

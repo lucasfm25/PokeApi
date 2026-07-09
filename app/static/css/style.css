@@ -463,3 +463,95 @@ aside a:hover{
     color:#60A5FA;
 
 }
+
+.move-container{
+
+    margin-top:30px;
+
+}
+
+.move-info-card{
+
+    background:#111827;
+
+    border-radius:15px;
+
+    padding:30px;
+
+}
+
+.move-info-card p{
+
+    margin:10px 0;
+
+}
+
+.move-pokemon-card{
+
+    margin-top:30px;
+
+}
+
+.pokemon-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+
+    gap:20px;
+
+    margin-top:20px;
+
+}
+
+#berry-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.berry-card{
+
+    background:#111827;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    text-align:center;
+
+    transition:.2s;
+
+}
+
+.berry-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.berry-card img{
+
+    width:90px;
+
+    height:90px;
+
+}
+
+.berry-card h3{
+
+    margin:15px 0;
+
+}
+
+.berry-card p{
+
+    color:#C5C5C5;
+
+    margin:6px 0;
+
+}

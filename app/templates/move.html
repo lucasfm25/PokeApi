@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Moves</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+
+    {% include "components/sidebar.html" %}
+
+    <main>
+
+        <h1>Pesquisar Move</h1>
+
+        <div class="search-box">
+
+            <input
+                id="move-input"
+                type="text"
+                placeholder="Ex.: Thunderbolt">
+
+            <button onclick="buscarMove()">
+
+                Buscar
+
+            </button>
+
+        </div>
+
+        <section id="move-result">
+
+        </section>
+
+    </main>
+
+</body>
+
+<script src="/static/js/sidebar.js"></script>
+<script src="/static/js/move.js"></script>
+
+</html>
