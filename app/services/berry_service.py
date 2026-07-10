@@ -10,10 +10,12 @@ class BerryService:
         for simple_berry in berries["results"]:
             berry_id = simple_berry["url"].split("/")[-2]
             berry = await self.client.get(f"berry/{berry_id}")
+            item_id = berry["item"]["url"].rstrip("/").split("/")[-1]
+            item = await self.client.get(f"item/{item_id}")
             berry_formatada = {
                 "id": int(berry_id),
                 "name": berry["name"].capitalize(),
-                "image" : f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/{berry["name"]}.png",
+                "image" : item["sprites"]["default"],
                 "type" : berry["natural_gift_type"]["name"]
             }
             berries_formatadas.append(berry_formatada)

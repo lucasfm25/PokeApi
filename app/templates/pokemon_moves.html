@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Moves do Pokémon</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+
+    {% include 'components/sidebar.html' %}
+
+    <main>
+
+        <h1>Buscar Moves de um Pokémon</h1>
+
+        <div class="search-box">
+
+            <input
+                id="pokemon-input"
+                type="text"
+                placeholder="Ex.: Pikachu">
+
+            <button onclick="buscarMovesPokemon()">
+
+                Buscar
+
+            </button>
+
+        </div>
+
+        <div class="filter-box">
+
+            <label for="move-filter">
+
+                Filtrar por classe:
+
+            </label>
+
+            <select id="move-filter">
+
+                <option value="Todos">Todos</option>
+
+                <option value="Physical">Physical</option>
+
+                <option value="Special">Special</option>
+
+                <option value="Status">Status</option>
+
+            </select>
+
+        </div>
+    
+        <section id="moves-result">
+
+        </section>
+
+    </main>
+
+</body>
+
+<script src="/static/js/sidebar.js"></script>
+<script src="/static/js/pokemon_moves.js"></script>
+
+</html>

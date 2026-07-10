@@ -45,16 +45,23 @@ async def shiny(request: Request):
         name="shiny.html"
     )
 
-@app.get("/move")
-async def move(request: Request):
+@app.get("/moves")
+async def moves(request: Request):
     return templates.TemplateResponse(
         request=request,
-        name="move.html"
+        name="moves.html"
     )
 
-@app.get("/berry")
-async def move(request: Request):
+@app.get("/berries")
+async def berries(request: Request):
     return templates.TemplateResponse(
         request=request,
-        name="berry.html"
+        name="berries.html"
+    )
+
+@app.get("/pokemon_moves")
+async def pokemon_moves(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="pokemon_moves.html"
     )

@@ -44,3 +44,22 @@ class MoveService:
             "effect_entries": [entry["effect"] for entry in move["effect_entries"] if entry["language"]["name"] == "en"],
             "pokemons": pokemons
         }
+    
+    async def buscar_move_pokemon(self, nome_pokemon: str):
+        pokemon = await self.client.get(f"pokemon/{nome_pokemon.lower()}")
+        pokemon_moves = []
+        for simple_move in pokemon["moves"]:
+            move = await self.client.get(f"move/{simple_move["move"]["name"]}")
+            move_formatado = {
+                "id": move["id"],
+                "name": move["name"].capitalize(),
+                "type": move["type"]["name"].capitalize(),
+                "power": move["power"],
+                "accuracy": move["accuracy"],
+                "priority": move["priority"],
+                "pp": move["pp"],
+                "damage_class": move["damage_class"]["name"].capitalize(),
+            }
+            pokemon_moves.append(move_formatado)
+
+        return pokemon_moves

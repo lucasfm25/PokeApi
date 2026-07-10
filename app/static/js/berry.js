@@ -1,6 +1,6 @@
 async function listarBerries(){
 
-    const response = await fetch("/berry");
+    const response = await fetch("/berries");
 
     const berries = await response.json();
 

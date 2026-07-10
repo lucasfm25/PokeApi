@@ -12,6 +12,10 @@ service = MoveService()
 async def listar_moves():
     return await service.listar_moves()
 
-@router.get("/{name}")
-async def buscar_move(name: str):
-    return await service.buscar_move(name)
+@router.get("/{move}")
+async def buscar_move(move: str):
+    return await service.buscar_move(move)
+
+@router.get("/BuscaMovesPokemon/{pokemon}")
+async def buscar_move_pokemon(pokemon: str):
+    return await service.buscar_move_pokemon(pokemon)
