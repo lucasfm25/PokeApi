@@ -6,6 +6,9 @@ from app.routers.region import router as region_router
 from app.routers.move import router as move_router
 from app.routers.evolution import router as evolution_router
 from app.routers.berry import router as berry_router
+from app.routers.nature import router as nature_router
+from app.routers.ability import router as ability_router
+from app.routers.item import router as item_router
 
 app = FastAPI(
     title="PokeAPI Hub",
@@ -14,7 +17,6 @@ app = FastAPI(
 )
 
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
-
 templates = Jinja2Templates(directory="app/templates")
 
 #rotas
@@ -23,7 +25,11 @@ app.include_router(region_router)
 app.include_router(move_router)
 app.include_router(evolution_router)
 app.include_router(berry_router)
+app.include_router(nature_router)
+app.include_router(ability_router)
+app.include_router(item_router)
 
+#paginas
 @app.get("/")
 async def home(request: Request):
     return templates.TemplateResponse(
@@ -65,3 +71,4 @@ async def pokemon_moves(request: Request):
         request=request,
         name="pokemon_moves.html"
     )
+    

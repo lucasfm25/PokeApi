@@ -35,3 +35,16 @@ class RegionService:
             "name": regiao["name"].capitalize(),
             "pokemons": pokemons_regiao
         }
+        
+    async def busca_localidades(self, name: str):
+        regiao = await self.client.get(f"region/{name.lower()}")
+        locais_formatados = []
+        for local in regiao["locations"]:
+            locais_formatados.append({
+                "id" : local["url"].rstrip("/").split("/")[-1],
+                "name" : local["name"].capitalize()
+            })
+            
+        return locais_formatados
+
+        

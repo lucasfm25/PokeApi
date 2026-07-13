@@ -12,6 +12,10 @@ service = RegionService()
 async def listar_regioes():
     return await service.listar_regioes()
 
-@router.get("/{name}")
-async def buscar_regiao(name: str):
-    return await service.buscar_regiao(name)
+@router.get("/{regiao}")
+async def buscar_regiao(regiao: str):
+    return await service.buscar_regiao(regiao)
+
+@router.get("/localidades/{regiao}")
+async def busca_localidades(regiao: str):
+    return await service.busca_localidades(regiao)
